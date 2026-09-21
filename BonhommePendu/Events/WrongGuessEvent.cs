@@ -9,7 +9,14 @@ namespace BonhommePendu.Events
 
         // TODO: Compléter
         public WrongGuessEvent(GameData gameData) {
-            
+            gameData.NbWrongGuesses++;
+            if (gameData.NbWrongGuesses == 7)
+            {
+                Events = new List<GameEvent>
+                {
+                    new LostEvent(gameData)
+                };
+            }
         }
     }
 }

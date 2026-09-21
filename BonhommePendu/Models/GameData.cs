@@ -12,6 +12,7 @@ namespace BonhommePendu.Models
         private int NbRevealedLetters { get; set; }
         private int NbLetters { get; set; }
 
+        // Caché du data retourné au client en JSON
         [JsonIgnore]
         public string Word { get; private set; }
 
